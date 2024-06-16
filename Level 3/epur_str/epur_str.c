@@ -1,0 +1,65 @@
+#include <unistd.h>
+
+int main(int argc, char const *argv[])
+{
+	int i;
+	int flg;
+
+	if (argc == 2)
+	{
+		i = 0;
+		while (argv[1][i] == ' ' || argv[1][i] == '\t')
+			i += 1;
+		while (argv[1][i])
+		{
+			if (argv[1][i] == ' ' || argv[1][i] == '\t')
+				flg = 1;
+			if (!(argv[1][i] == ' ' || argv[1][i] == '\t'))
+			{
+				if (flg != 0)
+					write(1, " ", 1);
+				flg = 0;
+				write(1, &argv[1][i], 1);
+			}
+			i += 1;
+		}
+	}
+	write(1, "\n", 1);
+	return (0);
+}
+
+// #include <unistd.h>
+
+// int test(int argc, char const *argv[])
+// {
+//     int i;
+//     int flg = 0;
+
+//     if (argc == 2)
+//     {
+//         i = 0;
+//         while (argv[1][i] == ' ' || argv[1][i] == '\t')
+//             i += 1;
+//         while (argv[1][i])
+//         {
+//             if (argv[1][i] == ' ' || argv[1][i] == '\t')
+//                 flg = 1;
+//             if (!(argv[1][i] == ' ' || argv[1][i] == '\t'))
+//             {
+//                 if (flg != 0)
+//                     write(1, " ", 1);
+//                 flg = 0;
+//                 write(1, &argv[1][i], 1);
+//             }
+//             i += 1;
+//         }
+//     }
+//     write(1, "\n", 1);
+//     return (0);
+// }
+
+// void main(void)
+// {
+// const char *args[] = {"program_name", "1   234     2345       56767      ", NULL};
+// test(2, args);
+// }
