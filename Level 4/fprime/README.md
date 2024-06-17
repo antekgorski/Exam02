@@ -9,7 +9,7 @@ Allowed functions: printf, atoi
 Write a program that takes a positive int and displays its prime factors on the
 standard output, followed by a newline.
 
-Factors must be displayed in ascending order and separated by '*', so that
+Factors must be displayed inascending  order and separated by '*', so that
 the expression in the output gives the right result.
 
 If the number of parameters is not 1, simply display a newline.
