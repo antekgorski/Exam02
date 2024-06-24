@@ -26,7 +26,8 @@ int main(int argc, char **argv)
         first_word_end = str;
         while (*str == ' ' || *str == '\t')
             str++;
-        if (*str) {
+        if (*str) 
+        {
             while (*str)
             {
                 if (*str == ' ' || *str == '\t')
